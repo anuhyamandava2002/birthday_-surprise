@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday ❤️</title>
+    <style>
+        #musicBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    animation: heartbeat 1.2s infinite;
+    filter: drop-shadow(0 0 8px pink);
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+        body {
+            margin: 0;
+            font-family: 'Dancing Script', cursive;
+            background-image: url("galaxy.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 20px 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .message {
+            max-width: 600px;
+            margin: auto;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .gallery img {
+            width: 250px;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            background-color: blue;
+            color: wheat;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background-color: mediumpurple;
+            color: white;
+        }
+
+        #surprise {
+            display: none;
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <button id="musicBtn" onclick="document.getElementById('bgMusic').play()">🎶💖</button>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section>
+    <h1> Happy Birthday, My Love! ❤️</h1>
+    <p>You make my world brighter every single day.</p>
+</section>
+
+<section>
+    <h2>💌 A Message Just For You</h2>
+    <div class="message">
+        Today is special because the most amazing person in my life was born.
+        I’m so grateful for your smile, your kindness, and the way you love me.
+        I hope this year brings you everything you deserve and more. I'm missing you alot KANNAYYA.
+        Can't wait to meet you and i really wanna HUG you 
+        <br><br>
+        I love you endlessly ❤️
+    </div>
+</section>
+
+<section>
+    <h2> Favourite Memories</h2>
+    <div class="gallery">
+        <img src="pic1.jpeg">
+        <img src="pic2.jpeg">
+        <img src="pic3.jpeg">
+    </div>
+</section>
+
+<section>
+    <h2>🎁 Your Surprise</h2>
+    <button onclick="showSurprise()">Click Here Birthday Boy ❤️</button>
+    <div id="surprise">You are my greatest gift. Happy Birthday, forever mine 💖</div>
+</section>
+
+
+<script>
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+// create floating hearts
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.innerHTML = "❤️";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 500);
+</script>
+
+</body>
+</html>
